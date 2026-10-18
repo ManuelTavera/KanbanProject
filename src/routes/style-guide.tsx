@@ -26,6 +26,7 @@ const semanticColors = [
   { name: 'foreground', className: 'bg-foreground' },
   { name: 'surface', className: 'bg-surface' },
   { name: 'line', className: 'bg-line' },
+  { name: 'muted', className: 'bg-muted' },
 ]
 
 const textStyles = [
@@ -79,7 +80,7 @@ function RouteComponent() {
       </header>
 
       <section className="flex flex-col gap-6">
-        <h2 className="text-heading-s uppercase text-medium-grey">Colors</h2>
+        <h2 className="text-heading-s uppercase text-muted">Colors</h2>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {colors.map((color) => (
             <div key={color.name} className="flex flex-col gap-2">
@@ -87,12 +88,12 @@ function RouteComponent() {
                 className={`h-24 rounded-lg border border-line ${color.className}`}
               />
               <p className="text-heading-m">{color.name}</p>
-              <p className="text-body-l text-medium-grey">{color.hex}</p>
+              <p className="text-body-l text-muted">{color.hex}</p>
             </div>
           ))}
         </div>
 
-        <h3 className="text-heading-s uppercase text-medium-grey">
+        <h3 className="text-heading-s uppercase text-muted">
           Semantic (swap under .dark)
         </h3>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
@@ -102,7 +103,7 @@ function RouteComponent() {
                 className={`h-24 rounded-lg border border-line ${color.className}`}
               />
               <p className="text-heading-m">{color.name}</p>
-              <p className="text-body-l text-medium-grey">
+              <p className="text-body-l text-muted">
                 --color-{color.name}
               </p>
             </div>
@@ -111,7 +112,7 @@ function RouteComponent() {
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="text-heading-s uppercase text-medium-grey">
+        <h2 className="text-heading-s uppercase text-muted">
           Typography
         </h2>
         <div className="flex flex-col gap-6 rounded-lg bg-surface p-6">
@@ -120,7 +121,7 @@ function RouteComponent() {
               key={style.name}
               className="flex flex-col gap-1 border-b border-line pb-6 last:border-b-0 last:pb-0"
             >
-              <p className="text-body-m text-medium-grey">
+              <p className="text-body-m text-muted">
                 {style.name} — {style.spec}
               </p>
               <p className={style.className}>
