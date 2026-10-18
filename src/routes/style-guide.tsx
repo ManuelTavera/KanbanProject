@@ -103,18 +103,14 @@ function RouteComponent() {
                 className={`h-24 rounded-lg border border-line ${color.className}`}
               />
               <p className="text-heading-m">{color.name}</p>
-              <p className="text-body-l text-muted">
-                --color-{color.name}
-              </p>
+              <p className="text-body-l text-muted">--color-{color.name}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="text-heading-s uppercase text-muted">
-          Typography
-        </h2>
+        <h2 className="text-heading-s uppercase text-muted">Typography</h2>
         <div className="flex flex-col gap-6 rounded-lg bg-surface p-6">
           {textStyles.map((style) => (
             <div
