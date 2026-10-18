@@ -29,6 +29,9 @@
   --color-foreground: var(--color-black);
   --color-surface: var(--color-white); /* sidebar, header, cards, modals */
   --color-line: var(--color-lines-light); /* borders */
+  /* Secondary text. Darker than Figma's medium-grey (#828fa3), which fails
+     WCAG AA contrast; 4.53:1 on light-grey, 4.87:1 on white */
+  --color-muted: #657288;
 
   /* Typography */
   --text-heading-xl: 1.5rem; /* 24px */
@@ -80,6 +83,7 @@
     --color-foreground: var(--color-white);
     --color-surface: var(--color-dark-grey);
     --color-line: var(--color-lines-dark);
+    --color-muted: #8e9baf; /* 4.91:1 on dark-grey, 5.67:1 on very-dark-grey */
   }
 
   body {
