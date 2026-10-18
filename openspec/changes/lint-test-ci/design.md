@@ -7,11 +7,13 @@ See proposal.md - Why. Current state: TanStack Start on Vite 8, TypeScript stric
 ## Goals / Non-Goals
 
 **Goals:**
+
 - One command per check, identical locally and in CI.
 - CI fails on any lint, format, type, unit, build or e2e failure.
 - Same lockfile and line endings on every machine.
 
 **Non-Goals:**
+
 - Coverage thresholds (task 1.6).
 - Real feature tests (each later task brings its own).
 - Multi-browser e2e. Chromium only.

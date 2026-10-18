@@ -1,3 +1,9 @@
+src/routeTree.gen.ts
+.output
+.tanstack
+playwright-report
+test-results
+.pi
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
