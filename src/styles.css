@@ -1,17 +1,90 @@
+@import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/plus-jakarta-sans@5.3.0/index.css');
+@import 'tailwindcss';
 
-@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-* {
-  box-sizing: border-box;
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+
+  --font-sans:
+    'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Colors */
+  --color-primary: #635fc7;
+  --color-primary-hover: #a8a4ff;
+  --color-black: #000112;
+  --color-very-dark-grey: #20212c;
+  --color-dark-grey: #2b2c37;
+  --color-lines-dark: #3e3f4e;
+  --color-medium-grey: #828fa3;
+  --color-lines-light: #e4ebfa;
+  --color-light-grey: #f4f7fd;
+  --color-red: #ea5555;
+  --color-red-hover: #ff9898;
+  --color-white: #ffffff;
+
+  /* Semantic — these swap under .dark; components should prefer these */
+  --color-background: var(--color-light-grey);
+  --color-text: var(--color-black);
+  --color-surface: var(--color-white); /* sidebar, header, cards, modals */
+  --color-line: var(--color-lines-light); /* borders */
+
+  /* Typography */
+  --text-heading-xl: 1.5rem; /* 24px */
+  --text-heading-xl--line-height: 1.875rem; /* 30px */
+  --text-heading-xl--font-weight: 700;
+
+  --text-heading-l: 1.125rem; /* 18px */
+  --text-heading-l--line-height: 1.4375rem; /* 23px */
+  --text-heading-l--font-weight: 700;
+
+  --text-heading-m: 0.9375rem; /* 15px */
+  --text-heading-m--line-height: 1.1875rem; /* 19px */
+  --text-heading-m--font-weight: 700;
+
+  --text-heading-s: 0.75rem; /* 12px */
+  --text-heading-s--line-height: 0.9375rem; /* 15px */
+  --text-heading-s--font-weight: 700;
+  --text-heading-s--letter-spacing: 0.2em; /* 2.4px */
+
+  --text-body-l: 0.8125rem; /* 13px */
+  --text-body-l--line-height: 1.4375rem; /* 23px */
+  --text-body-l--font-weight: 500;
+
+  --text-body-m: 0.75rem; /* 12px */
+  --text-body-m--line-height: 0.9375rem; /* 15px */
+  --text-body-m--font-weight: 700;
+
+  /* Spacing */
+  --spacing-sidebar-md: 16.3125rem; /* 261px, tablet */
+  --spacing-sidebar-lg: 18.75rem; /* 300px, desktop */
+  --spacing-column: 17.5rem; /* 280px */
+  --spacing-header-sm: 4rem;
+  --spacing-header-md: 5rem;
+  --spacing-header-lg: 6rem;
 }
 
-html,
-body,
-#app {
-  min-height: 100%;
-}
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
 
-body {
-  margin: 0;
-}
+  .dark {
+    color-scheme: dark;
+    --color-background: var(--color-very-dark-grey);
+    --color-text: var(--color-white);
+    --color-surface: var(--color-dark-grey);
+    --color-line: var(--color-lines-dark);
+  }
 
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+}
